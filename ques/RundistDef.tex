@@ -1,0 +1,41 @@
+\chapter{Рундист.}
+
+\begin{definition}[Рундист]
+	{\color{Black} \textbf{Рундист}} -- набор граней $R_0 = \{ Face_i\}_{i \in T_0} \in \{ R_i\},$ удовлетворяющий наибольшему числу следующих свойств:
+
+	\begin{enumerate}
+		\item $R_0$ имеет наибольшее число элементов среди остальных $R_i$:
+		$$\begin{gathered}
+		R_0 := \underset{R \in \{R_i\}}{argmax}(|R|)
+		\end{gathered}$$
+
+		\item полоса $R_0$ имеет наменьший размах среди остальных $R_i$:
+		$$\begin{gathered}
+		R_0 := \underset{R \in \{R_i\}}{argmin}(Amplitude(R))
+		\end{gathered}$$
+
+		\item угол между $l^{(up)}$ и $l^{(low)}$, соответствующий $R_0$, наименьший среди остальных $R_i$:
+		$$\begin{gathered}
+		R_0 := \underset{R \in \{R_i\}}{argmin}(sin(R))
+		\end{gathered}$$
+
+		\item через ось, перпендикулярную $\Pi(R_0)$ и проходящую через центр многогранника P, проходит наибольшее количество плоскостей симметрии относительно других $\Pi(R_i)$: 
+		$$\begin{gathered}
+		R_0 := \underset{R \in \{R_i\}}{argmax}(Sym(R))
+		\end{gathered}$$
+
+		\item набор $R_0$ лучше всех остальных $R_i$ аппроксимируется соответствующим цилиндром:
+		$$\begin{gathered}
+		R_0 := \underset{R \in \{R_i\}}{argmax}(S_{Cyl}(R))
+		\end{gathered}$$
+
+	\end{enumerate}
+\end{definition}
+
+\begin{remark}
+	Константы, которые должны быть заданы:
+	\begin{itemize}
+		\item $N_{cs}$ -- количество сечений плоскостями для вычисления меры симметричности;
+		\item n -- количество отражений для одного сечения при вычислении меры симметричности;
+	\end{itemize}
+\end{remark}
